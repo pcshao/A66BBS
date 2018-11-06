@@ -23,6 +23,7 @@ public class ContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+        //监听主机
         sce.getServletContext().setAttribute(ctx, HoneyConstants.WEB_DOMAIN);
 
         ServletContext application = sce.getServletContext();
