@@ -4,6 +4,7 @@ import java.util.Properties;
 
 /**
  * @description
+ *  加载项目配置文件与初始化常量
  * @author: chenPeng
  * @date: 2015/8/17 9:36
  * Copyright © 2015/8/17 Shanghai Raxtone Software Co.,Ltd Allright Reserved
@@ -21,11 +22,10 @@ public class HoneyConstants {
     }
 
     public static final String WEB_DOMAIN;
+    public static final String GRAVATAR_URL;
     public static final String LOGIN_COOKIE_ID = "honey"; //登录cookie名
     public static final String LOGIN_COOKIE_PWD = "honey_ivv"; //登录cookie名
     public static final String LOGIN_SESSION = "honey"; //登录session名
-
-    public static final String GRAVATAR_URL;
 
     static {
         WEB_DOMAIN = config.getProperty("domain");

@@ -24,7 +24,7 @@ public class HttpClientUtils {
     private final static Header defaultHeader = new Header("Content-Type", "text/xml;charset=utf-8");
     private final static String CHARSET_UTF8 = "UTF-8";
     private static HttpClientUtils uUu = new HttpClientUtils();
-    private HttpClientBuilder httpClientBuilder;
+    private HttpClientBuilder httpClientBuilder;    //Builder
 
     private HttpClientUtils() {
         this.httpClientBuilder = HttpClientBuilder.create();
@@ -51,6 +51,7 @@ public class HttpClientUtils {
         HttpPost httpPost = new HttpPost(url);
         StringEntity entity = new StringEntity(jsonString, CHARSET_UTF8);
         httpPost.setEntity(entity);
+        //多个头header
         if (headeries != null) {
             for (Header header : headeries) {
                 httpPost.setHeader(header.getKey(), header.getValue());

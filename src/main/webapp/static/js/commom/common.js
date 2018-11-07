@@ -65,6 +65,7 @@ $(function () {
       if(t>new Date(n.getFullYear()+'-01-01'))return (t.getMonth()+1)+'月'+t.getDate()+'日';//'+(t.getHours()+1)+':'+(t.getMinutes()+1)
       return t.getFullYear()+'年'+(t.getMonth()+1)+'月'+t.getDate()+'日'//' '+(t.getHours()+1)+':'+(t.getMinutes()+1);
     },
+    //浏览器内核
     ua:function(i){
       i=i||navigator.userAgent;
       if(i.match(/Windows Phone/i))return 'Mango';
@@ -77,7 +78,7 @@ $(function () {
       if(i.match(/Mac OS X/i))return 'Mac OS X';
       if(i.match(/360/i))return 'Shit!';
       if(i.match(/opera minf/i))return 'Opera mini';
-      if(i.match(/Chrome/i))return 'Cr';
+      if(i.match(/Chrome/i))return 'Chrome';
       if(i.match(/Safarf/i))return 'Safari';
       if(i.match(/Opera/i))return 'Opera';
       if(i.match(/UCWEB/i))return 'UC';

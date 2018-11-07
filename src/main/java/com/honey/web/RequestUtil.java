@@ -70,13 +70,13 @@ public class RequestUtil {
      *
      * @param ctx
      * @param req
-     * @param res
+     * @param resp
      */
-    public static RequestUtil begin(ServletContext ctx, HttpServletRequest req, HttpServletResponse res) {
+    public static RequestUtil begin(ServletContext ctx, HttpServletRequest req, HttpServletResponse resp) {
         RequestUtil rc = new RequestUtil();
         rc.context = ctx;
         rc.request = req;
-        rc.response = res;
+        rc.response = resp;
         rc.response.setCharacterEncoding(UTF_8);
         rc.session = req.getSession(true);
         rc.cookies = new HashMap<String, Cookie>();

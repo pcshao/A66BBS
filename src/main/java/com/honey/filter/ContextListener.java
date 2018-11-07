@@ -18,13 +18,16 @@ import javax.servlet.ServletContextListener;
  */
 public class ContextListener implements ServletContextListener {
 
-    private final String ctx = "_host";
+    /**
+     * ctx == sevletContext
+     */
+    private final String host_url = "_host";
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(ContextListener.class);
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        //监听主机
-        sce.getServletContext().setAttribute(ctx, HoneyConstants.WEB_DOMAIN);
+        //设值到上下文(前台页面_host取了路径)
+        sce.getServletContext().setAttribute(host_url, HoneyConstants.WEB_DOMAIN);
 
         ServletContext application = sce.getServletContext();
         ApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(application);
@@ -33,6 +36,6 @@ public class ContextListener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        sce.getServletContext().removeAttribute(ctx);
+        sce.getServletContext().removeAttribute(host_url);
     }
 }

@@ -30,6 +30,7 @@ public class HttpFilter implements Filter{
         req.setAttribute("ctx", req.getContextPath()); //设置公共属性
 
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
+        resp.setHeader("Access-Control-Allow-Origin", "*");  //允许跨域请求
         try {
             RequestUtil.begin(null, req, resp);
             filterChain.doFilter(servletRequest, servletResponse);
